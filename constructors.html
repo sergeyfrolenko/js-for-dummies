@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="test"></div>
+  <div id="test2"></div>
+  <div id="test3"></div>
+  <div id="test4"></div>
+  
+  <script src="lib-v0.1.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    function Constructor1() {
+      this.text = 'hello';
+    }
+    const instance = new Constructor1();
+    find.id('test').innerHTML = 
+      instance.text;
+    cl(Constructor1);
+    
+    const instance2 = new Constructor1();
+    find.id('test2').innerHTML = 
+      instance2.text;
+    cl(Constructor1);
+    
+    Constructor1.text = 'bye';
+    const instance3 = new Constructor1();
+    find.id('test3').innerHTML = 
+      instance3.text;
+    cl(Constructor1);
+    
+    cl(instance3.is);
+    Constructor1.prototype.is = 'true';
+    cl(instance3.is);
+    
+    const instance4 = new Constructor1();
+    find.id('test4').innerHTML = 
+      instance4.text;
+    cl(Constructor1);
+  </script>
+</body>
+</html>
