@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Count with JS</title>
+</head>
+<body>
+  <h1>Count with JS</h1>
+  <div id="count">h</div>
+  
+  <script type="text/javascript" charset="utf-8">
+    setInterval(()=>{
+      let d = new Date();
+      let t = document
+        .getElementById('count')
+        .innerHTML = d;
+    },1000);
+    let msg = prompt('input message');
+    alert(`Your message ${msg}`);
+  </script>
+</body>
+</html>
