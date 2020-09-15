@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h3 id="currentLocation"></h3>
+  <div id="navigator"></div>
+  <script src="lib-v0.1.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    const navigatorEl = find
+      .id('navigator');
+    const currentLocationEl = find
+      .id('currentLocation');
+    
+    setInterval(()=>{
+    let currentLocation = navigator
+      .geolocation
+      .getCurrentPosition((d)=> { 
+        let result = '';
+        for(let prop in d.coords) { 
+          result += `<b>${prop}</b>: \n ${d.coords[prop]} <br>`;
+        }
+        result += d.timestamp;
+        currentLocationEl
+          .innerHTML = result;
+      });
+    }, 1000);
+    let result = ''; 
+    for(let prop in navigator) { 
+      result += `<b>${prop}</b>: \n ${navigator[prop]} <br>`;
+    }
+    navigatorEl.innerHTML = result;
+  </script>
+</body>
+</html>
